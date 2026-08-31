@@ -12,9 +12,11 @@ agent = Agent(
     system_prompt="You are an ai agent that scans fridges, and say what foods is in the fridge"
 )
 
-async def scan_image(image_bytes: bytes) -> ScanResponse:
+async def scan_image(image_bytes: bytes, media_type: str) -> ScanResponse:
     result = await agent.run([
         "indentify all food in the picture",
-        BinaryContent(data=image_bytes, media_type="image/jpeg")
+        BinaryContent(data=image_bytes, media_type=media_type
+
+        )
     ])
     return result.output

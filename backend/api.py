@@ -11,4 +11,4 @@ async def health_check():
 @app.post("/scan", response_model=ScanResponse)
 async def scan_image_endpoint(file: UploadFile = File(...)):
     image_bytes = await file.read()
-    return await scan_image(image_bytes)
+    return await scan_image(image_bytes, file.content_type)
