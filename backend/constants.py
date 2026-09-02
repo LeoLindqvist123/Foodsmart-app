@@ -3,6 +3,6 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-MODEL = "openai/gpt-4o"
+MODEL = "google/gemini-2.5-pro"
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
