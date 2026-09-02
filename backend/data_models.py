@@ -21,6 +21,10 @@ class Recipe(BaseModel):
     calories: int
     protein_g: int
     carbohydrates_g: int
+    cook_time_minutes: int
 
 class RecipeResponse(BaseModel):
     recipes: list[Recipe]
+
+class RecipeRequest(BaseModel):
+    ingredients: list[str]
